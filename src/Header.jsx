@@ -9,6 +9,6 @@ export default () => (
       background: "lightblue",
     }}
   >
-    Header 1.1
+    Header 1.2
   </div>
 );

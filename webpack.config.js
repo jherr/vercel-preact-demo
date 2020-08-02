@@ -2,13 +2,12 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
 
-const isDevelopment = process.env.NODE_ENV !== "production";
-
-module.exports = {
+module.exports = (_, argv) => ({
   output: {
-    publicPath: isDevelopment
-      ? "http://localhost:8080/"
-      : "https://preact.jherrington.vercel.app/",
+    publicPath:
+      argv.mode === "development"
+        ? "http://localhost:8080/"
+        : "https://preact.jherrington.vercel.app/",
     path: path.resolve(__dirname, "build"),
   },
 
@@ -51,4 +50,4 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
-};
+});

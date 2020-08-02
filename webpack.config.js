@@ -8,7 +8,7 @@ module.exports = {
   output: {
     publicPath: isDevelopment
       ? "http://localhost:8080/"
-      : "http://preact.jherrington.vercel.app/",
+      : "https://preact.jherrington.vercel.app/",
     path: path.resolve(__dirname, "build"),
   },
 
